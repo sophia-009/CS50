@@ -1,40 +1,13 @@
 #include <stdio.h>
 #include <cs50.h>
 
-/**
- * Example:
- *
- * 378282246310005
- *  - - - - - - -
- *
- * 0*2 + 0*2 + 3*2 + 4*2 + 2*2 + 2*2 + 7*2 = 27
- *
- * 378282246310005
- * - - - - - - - -
- *
- * 3 + 8 + 8 + 2 + 6 + 1 + 0 + 5 = 33
- *
- * 27 + 33 = 60
- *
- * 60 % 10 == 0 / VALID CARD
- *
- */
-
 int main(void)
 {
-    long long cc_number = get_long_long("Number: ");
+    long cc_number = get_long("Number: ");
     int digit1 = 0, digit2 = 0, num_digits = 0, sum_of_double_odds = 0, sum_of_evens = 0;
 
     while (cc_number > 0)
     {
-        // Many of you are probably wondering why digit2 = digit1.
-        // The key to understanding how this works is right below
-        // that line — since digit1 is assigned AFTER its value's
-        // assigned to digit2, it means it will always contain
-        // the value of digit1 from the previous loop iteration.
-        // Therefore, after completing all iterations it will
-        // hold last but one value processed — the second digit
-        // since we progress from the end to the start of the number.
         digit2 = digit1;
         digit1 = cc_number % 10;
 
