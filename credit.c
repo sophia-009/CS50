@@ -43,6 +43,10 @@ int main(void)
             {
                 printf("AMEX\n");
             }
+            else
+            {
+                printf("INVALID\n");
+            }
         }
         else if (count == 16)
         {
@@ -51,6 +55,18 @@ int main(void)
             {
                 printf("MASTERCARD\n");
             }
+            else
+            {
+                int tempV2 = cc_nox / 1000000000000000;
+                if (tempV2 == 4)
+                {
+                    printf("VISA\n");
+                }
+                else
+                {
+                    printf("INVALID\n");
+                }
+            }
         }
         else if (count == 13)
         {
@@ -58,16 +74,7 @@ int main(void)
             if (tempV1 == 4)
             {
                 printf("VISA\n");
-            }    
-        }
-        
-        else if (count == 16)
-        {
-            int tempV2 = cc_nox / 1000000000000000;
-            if (tempV2 == 4)
-            {
-                printf("VISA\n");
-            }    
+            }
         }
         else
         {
